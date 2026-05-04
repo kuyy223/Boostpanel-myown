@@ -1,0 +1,395 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* CONTAINER */
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden; /* 🔥 cegah zoom ke samping */
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(30,41,59,0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.brand span {
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  color: #7c3aed;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 24px; /* 🔥 lebih lega */
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* TEXT */
+h1 {
+  font-size: 32px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: #94a3b8;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  background: #334155;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.input::placeholder {
+  color: #64748b;
+}
+
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* OPTION */
+.option {
+  display: flex;
+  gap: 12px;
+  background: #0f172a;
+  padding: 14px;
+  border-radius: 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  position: relative;
+  overflow: visible;
+  transition: all 0.25s ease;
+}
+
+.option:hover {
+  border: 1px solid #334155;
+}
+
+.option.active {
+  border: 1px solid #7c3aed;
+  background: #020617;
+}
+
+.option input {
+  display: none;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.full {
+  width: 100%;
+}
+
+.opt-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.opt-desc {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  display: none;
+  background: #020617;
+  border-radius: 12px;
+  margin-top: 6px;
+  border: 1px solid #334155;
+  position: absolute; /* 🔥 FIX dropdown nabrak */
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+
+.dropdown-menu div {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown-menu div:hover {
+  background: #7c3aed;
+}
+
+/* TOTAL BOX */
+.totalbox {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* MINI TEXT */
+.mini {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* TABLE FIX (🔥 INI YANG PALING PENTING) */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#historyTable {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+}
+
+#historyTable th,
+#historyTable td {
+  padding: 8px;
+  font-size: 12px;
+  text-align: left;
+  word-break: break-word;
+}
+
+th {
+  color: #94a3b8;
+}
+
+tr {
+  border-bottom: 1px solid #334155;
+}
+
+/* 🔥 cegah table bikin zoom */
+#history {
+  overflow: hidden;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 380px;
+  max-height: 90vh;
+  overflow-y: auto; /* 🔥 penting biar tidak zoom */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn .3s ease;
+  animation: scaleUp .2s ease;
+}
+
+@keyframes scaleUp {
+  from {transform:scale(.9); opacity:0;}
+  to {transform:scale(1); opacity:1;}
+}
+
+.popup-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.popup-content {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.popup-actions button {
+  flex: 1;
+}
+
+
+/* LOADER */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-box {
+  text-align: center;
+}
+
+.rocket {
+  width: 80px;
+  animation: float 0.8s infinite ease-in-out;
+}
+
+.loading-text {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
+}
+
+/* RULES */
+#rules {
+  display: none;
+  margin-top: 10px;
+  background: #020617;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
